@@ -140,7 +140,7 @@ public class CrosstabTransform {
             jrDataset.setDataPreSorted(dataset.getDataPreSorted());
         }
         ResetType resetType = dataset.getResetType();
-        jrDataset.setResetType(ConstantTransform.variableResetType(resetType));
+        jrDataset.setResetType(ConstantTransform.variableResetTypeDataset(resetType));
         if (resetType.equals(ResetType.GROUP) && dataset.getResetGroup() != null) {
             jrDataset.setResetGroup(accessor.getGroupTransform().getGroup(dataset.getResetGroup()));
         }

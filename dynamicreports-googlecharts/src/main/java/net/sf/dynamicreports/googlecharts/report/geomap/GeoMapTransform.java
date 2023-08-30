@@ -120,7 +120,7 @@ public class GeoMapTransform implements CustomComponentTransform<DRIGeoMap, DRID
     private void dataset(JasperTransformAccessor accessor, DRIDesignGeoMapDataset dataset, StandardGeoMapDataset jrDataset) {
         jrDataset.setDatasetRun(accessor.getDatasetTransform().datasetRun(dataset.getSubDataset()));
         ResetType resetType = dataset.getResetType();
-        jrDataset.setResetType(ConstantTransform.variableResetType(resetType));
+        jrDataset.setResetType(ConstantTransform.variableResetTypeDataset(resetType));
         if (resetType.equals(ResetType.GROUP) && dataset.getResetGroup() != null) {
             jrDataset.setResetGroup(accessor.getGroupTransform().getGroup(dataset.getResetGroup()));
         }

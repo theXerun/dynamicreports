@@ -22,6 +22,7 @@ package net.sf.dynamicreports.jasper.transformation;
 
 import java.util.List;
 
+import net.sf.jasperreports.engine.type.DatasetResetTypeEnum;
 import org.apache.commons.lang3.EnumUtils;
 import org.jfree.data.time.Day;
 import org.jfree.data.time.Hour;
@@ -526,6 +527,33 @@ public class ConstantTransform {
                 return PageOrientation.LANDSCAPE;
             default:
                 throw new JasperDesignException("Page orientation " + orientation.name() + " not supported");
+        }
+    }
+
+    /**
+     * <p>variableResetTypeDataset.</p>
+     *
+     * @param resetType a {@link net.sf.dynamicreports.design.constant.ResetType} object.
+     * @return a {@link net.sf.jasperreports.engine.type.DatasetResetTypeEnum} object.
+     */
+    public static DatasetResetTypeEnum variableResetTypeDataset(final ResetType resetType) {
+        if (resetType == null) {
+            return DatasetResetTypeEnum.NONE;
+        }
+
+        switch (resetType) {
+            case NONE:
+                return DatasetResetTypeEnum.NONE;
+            case REPORT:
+                return DatasetResetTypeEnum.REPORT;
+            case PAGE:
+                return DatasetResetTypeEnum.PAGE;
+            case COLUMN:
+                return DatasetResetTypeEnum.COLUMN;
+            case GROUP:
+                return DatasetResetTypeEnum.GROUP;
+            default:
+                throw new JasperDesignException("Variable reset type " + resetType.name() + " not supported");
         }
     }
 

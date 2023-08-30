@@ -25,6 +25,12 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
         </dependency>
+        <dependency>
+            <groupId>jaxen</groupId>
+            <artifactId>jaxen</artifactId>
+            <version>2.0.0</version>
+            <scope>runtime</scope>
+        </dependency>
         <!--Remove multiple SLF4J bindings-->
         <!--<dependency>
             <groupId>ch.qos.logback</groupId>
